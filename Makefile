@@ -1,5 +1,5 @@
-LEAP_LIBRARY := ../LeapSDK/lib/x64/libLeap.so -Wl,-rpath,../LeapSDK/lib/x64
-
+#LEAP_LIBRARY := ../LeapSDK/lib/x64/libLeap.so -Wl,-rpath,../LeapSDK/lib/x64
+LEAP_LIBRARY := src/libLeap.so -Wl,-rpath,./src
 Main: src/jerboa.cpp
 	$(CXX) -Wall -g src/jerboa.cpp -lX11 -o JitteryJerboa $(LEAP_LIBRARY)
 
