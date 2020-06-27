@@ -1,21 +1,25 @@
 # Jittery Jerboa. 
 ## Ubuntu 14.04 Leap Mouse Controller.
-A different kind of mouse. Its used **ONLY** to supplement a mouse. When its more convenient to not touch anything or use gesture based hotkeys. I used and tweaked on it for 4 months or so. From work, to home, to the starbucks. A C++ app i run on startup.
+A different kind of mouse. Its used **ONLY** to supplement a mouse. When its more convenient to not touch anything or use gesture based hotkeys. I used and tweaked on it for 4 months or so. A C++ app i run on startup.
 
-## Why you want to use this
+## Problems with leapPy
 
-The core principle is that the LEAP mouse is a great secondary mouse input
-+ You primarily use a normal mouse
-+ You hate that anytime your hands are too high, they automagically do stuff
-+ You have *fun* coworkers that love to give you a hand. Literally three or four hands trying to click poweroff.
-+ You use linux and pyLeapMouse is the only other option
-+ You eat burritos at your desk, or do howtos on lacquering wood.
++ Anytime your hands are too high, they automatically start triggering your mouse.
++ Scaling is bad. Its too precise to move across the screen, or too fast to click a button.
 
-## You dont want to use this 
+## Why you want to use this.
+
++ This is a left hand shortcut gestures and movement to supplement a mouse.
++ Only starts tracking your hand when you "pinch" the cursor.
++ Perfect for reading online without touching anything with cheeto hands.
+
+## You dont want to use this if
+
 + You actually want to use the LEAP to **REPLACE** your mouse
-+ You'd rather make your own. its fun! A challenge! This is not the example your looking for. [The legit sdk](https://developer.leapmotion.com/documentation/cpp/index.html?proglang=current) is actually really good.
++ You'd rather make your own. This is not the example your looking for. 
 
 ## Using jerboa
+
 + start listener - in terminal, ./JitteryJerboa. Needs to be run in that directory. 
 + pick up the mouse - left hand only, push your thumb against your hand. 
 + let go of the mouse - point your thumb away from your hand.
@@ -23,21 +27,24 @@ The core principle is that the LEAP mouse is a great secondary mouse input
 + scroll - pick up the mouse first, then make a fist. Moving up and down scrolls a page. More distance steps up through three speeds
 + exit listener - press enter
 
-## What?!
+## Why?
+
 **I am right handed.** And generally most of my shortcut stuff is on my left hand. I treat the leap like a shortcut. I dont have a noticable loss of precision in using my non dominant hand because the style of interaction is so new. 
 
 **I hate losing my mouse.** With the default softwares, it always moves when something comes into view. That made it unusable. I dont hate my physical mouse. I think its best feature is that when I let it go, it stays where I leave it. So the main point of jerboa is that you *pickup* and *putdown* the invisible mouse with your thumb.
 
 **I need a physical mouse.** LEAP is occasionally jump when things come into focus, or false clicks. Its not 100% reliable. Also, highlighting and precise clicks of small ui buttons definitely needs a physical mouse. LEAP in no way replaces that. BUT LEAP lets you create gestures and X11 really lets you send any mouse or key command. How cool is that?! Window switching, workspace switching, sleep. LEAP and a physical mouse is the peanut butter and jelly. 
 
-**This is not fancy.** This is the c++ example straight from leap's sdk. I just wrote a functions and inserted them into their basic example. And moved my configs to the head file. 
+**This is not fancy.** This is the c++ example from leap's sdk. I just wrote detection functions and inserted them into their basic example. And moved my configs to the head file. [The legit sdk](https://developer.leapmotion.com/documentation/cpp/index.html?proglang=current)
 
 ## Install. 
-**Vanilla is nice.** Vanilla ice? Chinchilla device? Everything it needs is included. Just run ./Jitteryjerboa
 
-**You broke it.** Me too! high five. just run make. It'll build out of the src directory.
+Everything is packaged needs is included. Just run ./Jitteryjerboa
 
-**You have man hands. or baby hands. or 5 monitors** Configs are all in src/jerboa.h. Its a soup of arbitrary settings. Its set to what I like. Change it, then rebuild it. It needs.
+Something broke? Just run make. It'll build out of the src directory.
+
+Configs are all in src/jerboa.h. Its a soup of arbitrary settings. Its set to what I like. Change it, then rebuild it. It needs.
+
 + x11 lib
 + x11 cursorfont
 + x11 xmu winutil
